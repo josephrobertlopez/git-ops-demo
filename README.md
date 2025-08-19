@@ -18,7 +18,6 @@
 |----------|---------|----------|
 | 🎯 [**git-mastery-unified.md**](git-mastery-unified.md) | **Streamlined commands + situations** | **Presentations, quick decisions, overview** |
 | 📚 [**DEMO-GUIDE.md**](DEMO-GUIDE.md) | **Deep scenario walkthroughs** | **Immersive practice, complete context** |
-| 📋 [**MANIFEST.md**](MANIFEST.md) | Quick branch & commit inventory | Instructors, navigation, reference |
 | ⚡ [**git-productivity-masterclass.md**](git-productivity-masterclass.md) | Immediate productivity gains | Instant results, copy-paste templates |
 | 📖 [**git-essentials-presentation.md**](git-essentials-presentation.md) | Academic-style with appendices | Complete reference, detailed learning |
 
@@ -49,8 +48,8 @@ cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
 ### Teaching Git to Others?
 ```bash
 # Unified guide = perfect presentation slides
-# Demo guide = hands-on workshop material
-# MANIFEST.md = instructor reference
+# Demo guide = hands-on workshop material  
+# Branch inventory below = instructor reference
 ```
 
 ---
@@ -115,4 +114,55 @@ cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
 
 ---
 
-**Start your Git learning adventure**: Read the [presentation](git-essentials-presentation.md), then dive into the [character stories](DEMO-GUIDE.md)! 🎉
+## 📋 Branch & Commit Quick Reference
+
+**Repository Stats**: 7 branches | 11 commits | 8 demo files  
+**Practice URL**: https://github.com/josephrobertlopez/git-ops-demo
+
+### Complete Branch Inventory
+
+| Branch | Purpose | Key Commits | Demo Focus |
+|--------|---------|-------------|------------|
+| `main` | **Documentation & Baseline** | `69cf4b6` Basic app structure<br>`7440a5a` Git essentials presentation | Basic operations, exploration |
+| `feature/authentication` | **Clean Development** | `e91bc43` Add authentication system | Branching, clean commits |
+| `feature/ui-improvements` | **Parallel Development** | `bb351e0` Add modern UI with CSS | Concurrent work, visual changes |
+| `hotfix/security-patch` | **Emergency Fixes** | `cdf2a97` SECURITY: Remove hardcoded credentials | **Cherry-pick practice** |
+| `demo/messy-development` | **History Cleanup** | `001ec0d` WIP: starting validation<br>`2dc34d1` oops forgot return<br>`b71419f` actually implement properly<br>`0c3ee51` fix startup flow<br>`fdf9608` add basic tests | **Interactive rebase practice** |
+| `feature/user-validation-clean` | **Professional PR** | `0926b81` feat: Add comprehensive validation | Professional standards |
+| `experimental/new-api` | **Large File Disaster** | `ce6d317` Add experimental GraphQL API<br>⚠️ Contains `large-dataset.json` (28KB+) | **BFG cleanup practice** |
+
+### Quick Workshop Commands
+
+```bash
+# Clone and explore
+git clone https://github.com/josephrobertlopez/git-ops-demo.git
+cd git-ops-demo
+git log --oneline --all --graph    # See all 11 commits
+git branch -a                      # See all 7 branches
+
+# Practice cherry-pick (Jordan's crisis)
+git checkout main
+git cherry-pick cdf2a97            # Apply security fix
+
+# Practice interactive rebase (Taylor's cleanup)
+git checkout demo/messy-development
+git rebase -i HEAD~5               # Clean up 5 messy commits
+
+# Practice BFG cleanup (Casey's disaster)
+git checkout experimental/new-api
+ls -lah large-dataset.json         # See the 28KB mistake
+bfg --delete-files large-dataset.json .git
+```
+
+### File Structure by Branch
+
+**All Branches**: `README.md`, presentation files  
+**Main**: `app.js`, `config.js` (⚠️ has secrets), `.gitignore`  
+**UI Branch**: + `styles.css`, `index.html`  
+**API Branch**: + `api.js`, `large-dataset.json` (⚠️ 28KB problem)  
+**Messy Branch**: + `tests.js` (across 5 commits)  
+**Clean Branch**: + `validation.test.js` (professional quality)
+
+---
+
+**Start your Git learning adventure**: Read the [unified guide](git-mastery-unified.md), then practice on the [character stories](DEMO-GUIDE.md)! 🎉
