@@ -5,33 +5,52 @@
 
 ---
 
-## 📚 Three Essential Documents
+## 🚀 **NEW**: Git Productivity Masterclass
+
+⚡ **[Git Productivity Masterclass](git-productivity-masterclass.md)** - **START HERE!**
+- **Get immediate results today** with 4 proven techniques
+- **10x faster emergency deployments** (3 hours → 30 seconds)
+- **Copy-paste templates** for every Git scenario
+- **30-day mastery action plan**
+
+## 📚 Complete Learning System
 
 | Document | Purpose | Best For |
 |----------|---------|----------|
+| ⚡ [**git-productivity-masterclass.md**](git-productivity-masterclass.md) | **Immediate productivity gains** | **Primary learning, instant results** |
 | 📋 [**MANIFEST.md**](MANIFEST.md) | Quick branch & commit inventory | Instructors, navigation, quick reference |
-| 📖 [**git-essentials-presentation.md**](git-essentials-presentation.md) | High-level tools, scenarios & appendices | Primary learning, overview, detailed reference |
+| 📖 [**git-essentials-presentation.md**](git-essentials-presentation.md) | High-level tools, scenarios & appendices | Complete reference, detailed learning |
 | 📚 [**DEMO-GUIDE.md**](DEMO-GUIDE.md) | Character-driven practice companion | Hands-on practice, storytelling context |
 
 ## 🚀 Quick Start
 
-### New to Git?
+### Want Immediate Git Productivity?
 ```bash
 git clone https://github.com/josephrobertlopez/git-ops-demo.git
 cd git-ops-demo
-cat git-essentials-presentation.md  # Start here!
+cat git-productivity-masterclass.md  # Get 10x results today!
 ```
 
-### Instructors
+### Emergency Git Fixes?
+```bash
+# Need to deploy a hotfix RIGHT NOW?
+# Scroll to "Emergency Git Reference Card" in the masterclass
+# Copy-paste the exact commands for your situation
+```
+
+### Instructors Teaching Git?
 ```bash
 cat MANIFEST.md  # Complete branch & commit inventory  
-# Pick scenarios by skill level, demo specific commands
+# Use masterclass slides for immediate student engagement
+# Practice on real scenarios, not abstract examples
 ```
 
-### Experienced Developers  
+### Experienced Developers?
 ```bash
-git log --oneline --all --graph  # See the complete story
-# Jump to any scenario that interests you
+# Skip to advanced techniques in the masterclass:
+# - Multi-branch cherry-pick automation
+# - Professional commit message templates  
+# - Team Git workflow standardization
 ```
 
 ---
