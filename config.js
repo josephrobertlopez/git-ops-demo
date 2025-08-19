@@ -1,8 +1,8 @@
-// Configuration with sensitive data
+// Configuration - NEVER commit sensitive data!
 const config = {
-    apiKey: "super-secret-key-12345",
-    dbPassword: "admin123",
-    jwtSecret: "my-jwt-secret"
+    apiKey: process.env.API_KEY || "your-api-key-here",
+    dbPassword: process.env.DB_PASSWORD || "your-db-password-here",
+    jwtSecret: process.env.JWT_SECRET || "your-jwt-secret-here"
 };
 
 module.exports = config;
