@@ -5,52 +5,52 @@
 
 ---
 
-## 🚀 **NEW**: Git Productivity Masterclass
+## 🎯 **STREAMLINED**: Git Mastery System
 
-⚡ **[Git Productivity Masterclass](git-productivity-masterclass.md)** - **START HERE!**
-- **Get immediate results today** with 4 proven techniques
-- **10x faster emergency deployments** (3 hours → 30 seconds)
-- **Copy-paste templates** for every Git scenario
-- **30-day mastery action plan**
+🚀 **[Git Mastery Unified](git-mastery-unified.md)** - **MAIN PRESENTATION**
+- **High-level commands** for real developer situations
+- **Micro-narratives** + immediate context + practice branches
+- **Perfect for presentations**, quick reference, and situation mapping
 
 ## 📚 Complete Learning System
 
 | Document | Purpose | Best For |
 |----------|---------|----------|
-| ⚡ [**git-productivity-masterclass.md**](git-productivity-masterclass.md) | **Immediate productivity gains** | **Primary learning, instant results** |
-| 📋 [**MANIFEST.md**](MANIFEST.md) | Quick branch & commit inventory | Instructors, navigation, quick reference |
-| 📖 [**git-essentials-presentation.md**](git-essentials-presentation.md) | High-level tools, scenarios & appendices | Complete reference, detailed learning |
-| 📚 [**DEMO-GUIDE.md**](DEMO-GUIDE.md) | Character-driven practice companion | Hands-on practice, storytelling context |
+| 🎯 [**git-mastery-unified.md**](git-mastery-unified.md) | **Streamlined commands + situations** | **Presentations, quick decisions, overview** |
+| 📚 [**DEMO-GUIDE.md**](DEMO-GUIDE.md) | **Deep scenario walkthroughs** | **Immersive practice, complete context** |
+| 📋 [**MANIFEST.md**](MANIFEST.md) | Quick branch & commit inventory | Instructors, navigation, reference |
+| ⚡ [**git-productivity-masterclass.md**](git-productivity-masterclass.md) | Immediate productivity gains | Instant results, copy-paste templates |
+| 📖 [**git-essentials-presentation.md**](git-essentials-presentation.md) | Academic-style with appendices | Complete reference, detailed learning |
 
 ## 🚀 Quick Start
 
-### Want Immediate Git Productivity?
+### Want Command + Situation Overview?
 ```bash
 git clone https://github.com/josephrobertlopez/git-ops-demo.git
 cd git-ops-demo
-cat git-productivity-masterclass.md  # Get 10x results today!
+cat git-mastery-unified.md  # Perfect presentation format!
 ```
 
-### Emergency Git Fixes?
+### Want Deep Hands-On Practice?
 ```bash
-# Need to deploy a hotfix RIGHT NOW?
-# Scroll to "Emergency Git Reference Card" in the masterclass
-# Copy-paste the exact commands for your situation
+# After reading unified guide, dive deep:
+cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
+# Then practice on the actual branches mentioned
 ```
 
-### Instructors Teaching Git?
+### Emergency Git Situations?
 ```bash
-cat MANIFEST.md  # Complete branch & commit inventory  
-# Use masterclass slides for immediate student engagement
-# Practice on real scenarios, not abstract examples
+# Quick decision tree in unified guide:
+# "Production broken?" → git cherry-pick
+# "History embarrassing?" → git rebase -i  
+# "Need safe push?" → git push --force-with-lease
 ```
 
-### Experienced Developers?
+### Teaching Git to Others?
 ```bash
-# Skip to advanced techniques in the masterclass:
-# - Multi-branch cherry-pick automation
-# - Professional commit message templates  
-# - Team Git workflow standardization
+# Unified guide = perfect presentation slides
+# Demo guide = hands-on workshop material
+# MANIFEST.md = instructor reference
 ```
 
 ---
