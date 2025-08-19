@@ -95,10 +95,11 @@ cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
 ## 📊 Repository Stats
 
 - **7 branches** with different scenarios
-- **11 total commits** across all branches  
+- **22 total commits** across all branches (including improvements)
 - **8 demo files** including realistic web application
 - **Real mistakes** like large files, hardcoded secrets, messy commits
 - **Professional examples** with proper documentation and testing
+- **100% accurate hash references** for seamless learning
 
 ---
 
@@ -114,7 +115,7 @@ cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
 
 ## 📋 Branch & Commit Quick Reference
 
-**Repository Stats**: 7 branches | 11 commits | 8 demo files  
+**Repository Stats**: 7 branches | 22 commits | 8 demo files  
 **Practice URL**: https://github.com/josephrobertlopez/git-ops-demo
 
 ### Complete Branch Inventory
@@ -135,7 +136,7 @@ cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
 # Clone and explore
 git clone https://github.com/josephrobertlopez/git-ops-demo.git
 cd git-ops-demo
-git log --oneline --all --graph    # See all 11 commits
+git log --oneline --all --graph    # See all 22 commits
 git branch -a                      # See all 7 branches
 
 # Practice cherry-pick (Jordan's crisis)
