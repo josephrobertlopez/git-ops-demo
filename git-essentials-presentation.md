@@ -1,398 +1,633 @@
 # Git Essentials for New Coders
-## A Narrative-Driven Learning Journey
+## High-Level Overview & Scenario Guide
+
+> **Complete Learning System**: This presentation + hands-on repository with 7 realistic scenarios
 
 ---
 
-## Slide 1: The Great Git Debate 🎭
+## The Git Learning Philosophy 🎭
 
-**The Question**: What Git features should new coders learn first?
+**The Great Debate Result**: Context-driven, progressive learning wins!
 
-**Three Perspectives Emerged**:
-- 🛡️ **Beginner Advocate**: Start with basics only (clone, add, commit, push)
-- ⚡ **Advanced Advocate**: Learn advanced features early to prevent disasters  
-- 🎯 **Pragmatic Mentor**: Context-driven, progressive learning
+**Three Key Insights**:
+- 🛡️ **Foundation First**: Master daily workflows before advanced features
+- ⚡ **Real Problems**: Learn tools when you encounter actual scenarios
+- 🎯 **Progressive Mastery**: Build from basics → recovery → professional → crisis
 
-**Consensus**: Git learning should be **scenario-based** and **progressive**
-
----
-
-## Slide 2: Meet Our Demo Project 📱
-
-```
-demo-project/
-├── app.js          # Main application
-├── config.js       # Configuration (with secrets!)
-├── styles.css      # UI styling  
-├── index.html      # Web interface
-├── api.js          # Experimental GraphQL API
-├── large-dataset.json  # Accidentally committed large file
-├── .gitignore      # What to ignore
-└── README.md       # Project documentation
-```
-
-**Four Branches, Four Stories**:
-- `master` - Clean starting point
-- `feature/authentication` - Adding new functionality
-- `feature/ui-improvements` - Parallel development
-- `hotfix/security-patch` - Emergency fixes
-- `experimental/new-api` - Mistakes happen here!
+**Our Approach**: Learn Git through **developer stories** with real consequences
 
 ---
 
-## Slide 3: Story 1 - The Foundation (Basic Git) 🏗️
+## Your Learning Toolkit 📱
 
-**Sarah's First Day**: "I need to contribute to this project..."
+**Repository**: https://github.com/josephrobertlopez/git-ops-demo
 
+**Three Essential Documents**:
+- 📋 **MANIFEST.md** - Quick branch & commit inventory
+- 📖 **This presentation** - High-level tools & scenarios  
+- 📚 **DEMO-GUIDE.md** - Detailed practice companion
+
+**Seven Developer Stories**:
+- `main` - Sarah's foundation journey
+- `feature/authentication` - Alex's clean development  
+- `feature/ui-improvements` - Sam's parallel work
+- `hotfix/security-patch` - Jordan's emergency fix
+- `demo/messy-development` - Taylor's commit cleanup
+- `feature/user-validation-clean` - Morgan's professional PR
+- `experimental/new-api` - Casey's large file disaster
+
+---
+
+## Essential Git Tools by Scenario
+
+### 🛡️ Level 1: Daily Survival (Sarah's Foundation)
+**Commands**: `clone`, `status`, `add`, `commit`, `push`, `pull`  
+**Scenario**: New developer contributing to existing project  
+**Practice Branch**: `main`
 ```bash
-# The Essentials Every Coder Needs
-git clone <repository-url>     # Get the code
+git clone <repo-url>           # Get the code
 git status                     # Where am I?
-git add .                      # Stage my changes
-git commit -m "Fix user login" # Save with message
-git push                       # Share with team
-git pull                       # Get team updates
+git log --oneline              # What's been done?
 ```
 
-**Our Demo**:
+### 🌳 Level 2: Team Collaboration (Alex & Sam's Branches)
+**Commands**: `branch`, `checkout`, `merge`, `diff`  
+**Scenario**: Parallel feature development  
+**Practice Branches**: `feature/authentication`, `feature/ui-improvements`
 ```bash
-git log --oneline
-# 69cf4b6 Initial commit: Basic app structure
+git checkout -b feature-name   # Create new branch
+git diff main..feature-branch  # Compare changes
 ```
 
-**Lesson**: Master these 6 commands first. They handle 90% of daily work.
+### 🍒 Level 3: Emergency Response (Jordan's Cherry-Pick)
+**Commands**: `cherry-pick`, `reset`, `revert`  
+**Scenario**: Apply specific fixes without full merge  
+**Practice Branch**: `hotfix/security-patch`
+```bash
+git cherry-pick <commit-hash>  # Apply specific commit
+```
+
+### 📝 Level 4: Professional Polish (Taylor & Morgan)
+**Commands**: `rebase -i`, `push --force-with-lease`  
+**Scenario**: Clean history before code review  
+**Practice Branches**: `demo/messy-development`, `feature/user-validation-clean`
+```bash
+git rebase -i HEAD~5           # Clean up commits
+git push --force-with-lease    # Safe force push
+```
+
+### 💣 Level 5: Crisis Recovery (Casey's BFG)
+**Commands**: BFG, `reflog`, `gc`  
+**Scenario**: Remove large files or sensitive data from history  
+**Practice Branch**: `experimental/new-api`
+```bash
+bfg --strip-blobs-bigger-than 10M .git  # Remove large files
+```
 
 ---
 
-## Slide 4: Story 2 - The Branch Manager (Branching) 🌳
+## Complete Scenario List
 
-**Alex's Challenge**: "I need to work on authentication while Sarah does UI..."
+### Scenario 1: Sarah's First Day (Foundation)
+**What happens**: New developer needs to explore and understand existing project  
+**Git skills**: `clone`, `status`, `log`, `show`, `diff`  
+**Practice**: Explore `main` branch, understand project structure  
+**Outcome**: Confidence with basic Git navigation
 
-```bash
-# Branching Workflow
-git branch feature/authentication    # Create new branch
-git checkout feature/authentication  # Switch to it
-# ...make changes...
-git add app.js
-git commit -m "Add basic authentication system"
-git checkout master               # Back to main
-git merge feature/authentication  # Bring changes in
-```
+### Scenario 2: Alex's Authentication Feature (Clean Development)  
+**What happens**: Developer adds login functionality on dedicated branch  
+**Git skills**: `branch`, `checkout`, `add`, `commit`, clean commit messages  
+**Practice**: Review `feature/authentication` branch  
+**Outcome**: Understanding of feature branch workflow
 
-**Our Demo Branches**:
-```
-* ce6d317 Add experimental GraphQL API
-| * cdf2a97 SECURITY: Remove hardcoded credentials  
-|/  
-| * bb351e0 Add modern UI with CSS and HTML
-|/  
-| * e91bc43 Add basic authentication system
-|/  
-* 69cf4b6 Initial commit: Basic app structure
-```
+### Scenario 3: Sam's UI Improvements (Parallel Development)
+**What happens**: Designer works on styling while Alex codes authentication  
+**Git skills**: Parallel branching, `diff` between branches, visual history  
+**Practice**: Compare `feature/ui-improvements` with other branches  
+**Outcome**: Appreciation for non-conflicting parallel work
 
-**Lesson**: Branches enable parallel development without conflicts.
+### Scenario 4: Jordan's Security Crisis (Cherry-Pick)
+**What happens**: Production has security vulnerability, need surgical fix  
+**Git skills**: `cherry-pick`, selective commit application, hotfix workflow  
+**Practice**: Apply `hotfix/security-patch` commit to main  
+**Outcome**: Mastery of targeted fixes without full merges
 
----
+### Scenario 5: Taylor's Messy Development (Interactive Rebase)
+**What happens**: Developer has embarrassing commit history before review  
+**Git skills**: `rebase -i`, squashing, commit reorganization  
+**Practice**: Clean up `demo/messy-development` branch commits  
+**Outcome**: Professional commit history preparation
 
-## Slide 5: Story 3 - The Time Traveler (Reset & Revert) ⏰
+### Scenario 6: Morgan's Professional PR (Force-with-Lease)
+**What happens**: Senior developer demonstrates perfect pull request standards  
+**Git skills**: `push --force-with-lease`, professional commit messages, testing  
+**Practice**: Study `feature/user-validation-clean` branch quality  
+**Outcome**: Understanding of professional development standards  
 
-**Jordan's Mistake**: "I committed something terrible..."
-
-```bash
-# Mistake: Committed config.js with real passwords!
-git log --oneline
-# e91bc43 Add basic authentication system
-# 69cf4b6 Initial commit: Basic app structure
-
-# Option 1: Undo last commit, keep changes
-git reset --soft HEAD~1
-
-# Option 2: Undo last commit, lose changes  
-git reset --hard HEAD~1
-
-# Option 3: Create new commit that undoes changes
-git revert HEAD
-```
-
-**Real Scenario**: Security patch needed!
-```bash
-git checkout hotfix/security-patch
-# Fixed: Replace hardcoded secrets with env vars
-git commit -m "SECURITY: Remove hardcoded credentials"
-```
-
-**Lesson**: Mistakes happen. Know your undo options.
+### Scenario 7: Casey's Large File Disaster (BFG Cleanup)
+**What happens**: Accidentally committed large dataset, repository bloated  
+**Git skills**: BFG repo-cleaner, repository maintenance, history cleanup  
+**Practice**: Remove `large-dataset.json` from `experimental/new-api`  
+**Outcome**: Crisis recovery and repository optimization skills
 
 ---
 
-## Slide 6: Story 4 - The Conflict Resolver (Merge Conflicts) ⚔️
+## Quick Start Guide 🚀
 
-**Team Collision**: Two people edited the same file...
+### For New Developers
+1. **Clone repository**: `git clone https://github.com/josephrobertlopez/git-ops-demo.git`
+2. **Start with Sarah**: Explore `main` branch with basic commands
+3. **Read DEMO-GUIDE.md**: Get detailed character stories and practice steps
+4. **Progress through levels**: Foundation → Collaboration → Emergency → Professional → Crisis
 
-```bash
-git checkout master
-git merge feature/authentication
-# Auto-merging app.js
-# CONFLICT (content): Merge conflict in app.js
+### For Instructors  
+1. **Check MANIFEST.md**: Complete branch and commit inventory for quick reference
+2. **Use scenario list**: Pick appropriate scenarios for skill level
+3. **Demo commands**: Each level has specific commands to demonstrate
+4. **Practice scenarios**: Students can work through real Git problems
 
-# File shows:
-<<<<<<< HEAD
-function startApp() {
-    console.log("Starting application...");
-=======
-function startApp() {
-    console.log("Starting with auth...");
->>>>>>> feature/authentication
-```
-
-**Resolution Process**:
-1. Edit file to resolve conflicts
-2. Remove conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)  
-3. `git add` resolved files
-4. `git commit` to complete merge
-
-**Lesson**: Conflicts are normal. Learn to resolve them calmly.
+### For Self-Learners
+1. **Read this overview**: Understand the philosophy and approach
+2. **Pick your scenario**: Start where you feel comfortable  
+3. **Use DEMO-GUIDE.md**: Follow detailed character stories for context
+4. **Practice safely**: Repository is designed for experimentation
 
 ---
 
-## Slide 7: Story 5 - The Cherry Picker (Selective Changes) 🍒
+## Command Reference by Level
 
-**Emergency Hotfix**: "We need JUST the security fix in production..."
-
+### Level 1 (Daily Workflow)
 ```bash
-# We're on master, need the security fix from hotfix branch
-git log --oneline hotfix/security-patch
-# cdf2a97 SECURITY: Remove hardcoded credentials
-# 69cf4b6 Initial commit: Basic app structure
-
-# Cherry-pick just the security commit
-git cherry-pick cdf2a97
-
-# Now master has the fix without other experimental code
+git status                     # Check current state
+git log --oneline             # View commit history  
+git add <files>               # Stage changes
+git commit -m "message"       # Save changes
+git push                      # Share with team
+git pull                      # Get team updates
 ```
 
-**Use Cases**:
-- Hotfixes to production
-- Applying specific commits across branches
-- Backporting features to older versions
+### Level 2 (Branching)
+```bash
+git branch <name>             # Create branch
+git checkout <branch>         # Switch branches
+git checkout -b <name>        # Create and switch
+git merge <branch>            # Merge branches
+git diff <branch1>..<branch2> # Compare branches
+```
 
-**Lesson**: Sometimes you need surgical precision, not a full merge.
+### Level 3 (Recovery)
+```bash
+git cherry-pick <hash>        # Apply specific commit
+git reset --soft HEAD~1       # Undo last commit, keep changes
+git reset --hard HEAD~1       # Undo last commit, lose changes
+git revert <hash>             # Create commit that undoes changes
+```
+
+### Level 4 (Professional)
+```bash
+git rebase -i HEAD~N          # Interactive rebase last N commits
+git push --force-with-lease   # Safe force push after rebase
+git log --graph --oneline --all # Visual branch history
+```
+
+### Level 5 (Crisis Management)
+```bash
+bfg --strip-blobs-bigger-than 50M    # Remove large files
+bfg --delete-files filename          # Remove specific files
+git reflog expire --expire=now --all # Clean reflog
+git gc --prune=now --aggressive      # Garbage collection
+```
 
 ---
 
-## Slide 8: Story 6 - The History Cleaner (Interactive Rebase) 📝
+## Learning Philosophy Recap
 
-**Before Code Review**: "My commits are messy..."
+**Anti-Patterns** (Avoid these):
+- ❌ Learning all commands at once (cognitive overload)
+- ❌ Memorizing without context (no retention)
+- ❌ Using `git push --force` (dangerous to teammates)
+- ❌ Skipping the stories (missing emotional context)
 
-```bash
-git log --oneline feature/authentication  
-# e91bc43 Add basic authentication system
-# a1b2c3d WIP: trying stuff
-# d4e5f6g fix typo
-# g7h8i9j actually fix the typo
-# j1k2l3m final auth implementation
-
-# Clean it up before review
-git rebase -i HEAD~5
-
-# Interactive editor opens:
-pick e91bc43 Add basic authentication system
-squash a1b2c3d WIP: trying stuff  
-squash d4e5f6g fix typo
-squash g7h8i9j actually fix the typo
-squash j1k2l3m final auth implementation
-```
-
-**Result**: One clean commit instead of five messy ones.
-
-**Lesson**: Clean history makes code reviews easier and debugging faster.
+**Pro-Patterns** (Do these):
+- ✅ Learn through realistic developer scenarios
+- ✅ Progress from basics to advanced based on need
+- ✅ Practice on safe demo repository  
+- ✅ Understand WHY before memorizing HOW
+- ✅ Use `--force-with-lease` for safe rebasing
 
 ---
 
-## Slide 9: Story 7 - The Safe Forcer (Push --force-with-lease) 🛡️
+## Next Steps
 
-**After Rebase**: "I need to update the remote branch safely..."
+**Choose Your Adventure**:
+- **New to Git?** Start with Sarah's story (`main` branch)
+- **Need cherry-pick skills?** Jump to Jordan's crisis (`hotfix/security-patch`)
+- **Messy commits?** Learn from Taylor's cleanup (`demo/messy-development`)
+- **Want professional standards?** Study Morgan's PR (`feature/user-validation-clean`)
 
-```bash
-# DANGEROUS - can overwrite others' work
-git push --force
+**Remember**: Great developers aren't born knowing Git. They learn it by solving real problems, one story at a time.
 
-# SAFE - only pushes if no one else changed the branch
-git push --force-with-lease
-
-# If someone else pushed, you get:
-# error: failed to push some refs
-# hint: Updates were rejected because the tip of your current branch is behind
-```
-
-**Why Force-with-lease?**
-- Prevents accidentally overwriting teammates' commits
-- Safe way to push after rebasing
-- Industry standard for collaborative development
-
-**Lesson**: Force-with-lease is the professional way to force push.
+**Your Git adventure starts now!** 🎉
 
 ---
 
-## Slide 10: Story 8 - The Large File Remover (BFG) 💣
+# Appendices - Detailed Reference Material
 
-**Disaster**: "Someone committed our 50MB dataset file!"
+> **For Curious Learners**: Deep technical details and advanced scenarios
 
+---
+
+## Appendix A: Complete Command Reference
+
+### Basic Operations (Level 1)
+
+#### Repository Setup
 ```bash
-# Our experimental branch has large-dataset.json (1MB+)
-git checkout experimental/new-api
-ls -lh large-dataset.json
-# -rw-r--r-- 1 user group 28K Aug 19 08:35 large-dataset.json
-
-# Repository is now bloated forever... or is it?
+git clone <url>                    # Clone remote repository
+git clone <url> <directory>        # Clone to specific directory
+git init                           # Initialize new repository
+git remote -v                      # Show remote repositories
+git remote add origin <url>        # Add remote repository
 ```
 
-**Enter BFG Repo-Cleaner**:
+#### Daily Workflow
 ```bash
-# Install BFG
-brew install bfg  # or download jar
+git status                         # Show working tree status
+git status --short                 # Compact status output
+git add <file>                     # Stage specific file
+git add .                          # Stage all changes
+git add -A                         # Stage all changes including deletions
+git commit -m "message"            # Commit with message
+git commit -am "message"           # Stage and commit tracked files
+git push                           # Push to remote
+git push -u origin <branch>        # Push and set upstream
+git pull                           # Fetch and merge
+git fetch                          # Fetch without merging
+```
 
-# Remove large files from ALL history
-bfg --strip-blobs-bigger-than 10M .git
-bfg --delete-files large-dataset.json .git
+#### History and Information
+```bash
+git log                            # Show commit history
+git log --oneline                  # Compact history
+git log --graph                    # Visual branch history
+git log --stat                     # Show file statistics
+git show <commit>                  # Show commit details
+git diff                           # Show unstaged changes
+git diff --staged                  # Show staged changes
+git diff <commit1>..<commit2>      # Compare commits
+```
 
-# Clean up
+### Branching (Level 2)
+
+#### Branch Management
+```bash
+git branch                         # List local branches
+git branch -a                      # List all branches
+git branch -r                      # List remote branches
+git branch <name>                  # Create branch
+git branch -d <name>               # Delete branch (safe)
+git branch -D <name>               # Force delete branch
+git checkout <branch>              # Switch to branch
+git checkout -b <name>             # Create and switch
+git switch <branch>                # Modern branch switching
+git switch -c <name>               # Create and switch (modern)
+```
+
+#### Merging
+```bash
+git merge <branch>                 # Merge branch
+git merge --no-ff <branch>         # Force merge commit
+git merge --squash <branch>        # Squash merge
+```
+
+### Recovery Operations (Level 3)
+
+#### Undoing Changes
+```bash
+git reset HEAD <file>              # Unstage file
+git reset --soft HEAD~1            # Undo commit, keep staged
+git reset --mixed HEAD~1           # Undo commit and staging
+git reset --hard HEAD~1            # Undo commit, staging, and changes
+git checkout -- <file>             # Discard file changes
+git restore <file>                 # Modern file restoration
+git restore --staged <file>        # Modern unstaging
+```
+
+#### Cherry-picking and Reverting
+```bash
+git cherry-pick <commit>           # Apply specific commit
+git cherry-pick -n <commit>        # Apply without committing
+git revert <commit>                # Create commit that undoes changes
+git revert -n <commit>             # Revert without committing
+```
+
+### Professional Operations (Level 4)
+
+#### Interactive Rebase
+```bash
+git rebase -i HEAD~N               # Interactive rebase last N commits
+git rebase -i <commit>             # Rebase from specific commit
+git rebase --continue              # Continue after resolving conflicts
+git rebase --abort                 # Abort rebase
+git rebase --skip                  # Skip current commit
+```
+
+#### Advanced Pushing
+```bash
+git push --force-with-lease        # Safe force push
+git push --force-with-lease origin <branch>  # Force push specific branch
+git push -f                        # Dangerous force push (avoid!)
+```
+
+### Crisis Management (Level 5)
+
+#### Repository Maintenance
+```bash
+git reflog                         # Show reference history
+git reflog expire --expire=now --all  # Clean reflog
+git gc                             # Garbage collection
+git gc --prune=now --aggressive    # Aggressive cleanup
+git fsck                           # Check repository integrity
+```
+
+#### Advanced Recovery
+```bash
+git reset --hard <commit>          # Reset to specific commit
+git cherry-pick <commit1>..<commit2>  # Cherry-pick range
+git blame <file>                   # Show line-by-line history
+git bisect start                   # Start binary search for bugs
+git bisect bad                     # Mark commit as bad
+git bisect good <commit>           # Mark commit as good
+```
+
+---
+
+## Appendix B: Troubleshooting Guide
+
+### Common Error Messages and Solutions
+
+#### "fatal: not a git repository"
+```bash
+# Problem: Not in a Git repository
+# Solution: Navigate to repository or initialize
+cd /path/to/repository
+# OR
+git init
+```
+
+#### "fatal: remote origin already exists"
+```bash
+# Problem: Remote already configured
+# Solution: Remove and re-add or update URL
+git remote remove origin
+git remote add origin <new-url>
+# OR
+git remote set-url origin <new-url>
+```
+
+#### "error: failed to push some refs"
+```bash
+# Problem: Remote has changes you don't have locally
+# Solution: Pull first, then push
+git pull origin <branch>
+git push origin <branch>
+```
+
+#### "CONFLICT (content): Merge conflict"
+```bash
+# Problem: Merge conflicts
+# Solution: Resolve conflicts manually
+# 1. Edit files to resolve conflicts
+# 2. Remove conflict markers (<<<<<<<, =======, >>>>>>>)
+# 3. Stage resolved files
+git add <resolved-file>
+git commit
+```
+
+#### "error: Your local changes would be overwritten"
+```bash
+# Problem: Local changes conflict with checkout/merge
+# Solutions:
+git stash                          # Temporarily save changes
+git checkout <branch>
+git stash pop                      # Restore changes
+# OR
+git commit -am "WIP: save changes" # Commit changes first
+```
+
+### Performance Issues
+
+#### Large Repository
+```bash
+git config core.preloadindex true        # Speed up status
+git config core.fscache true             # Windows file system cache
+git config gc.auto 256                   # Adjust garbage collection
+```
+
+#### Slow Operations
+```bash
+git config --global core.editor "code --wait"  # Faster editor
+git config --global merge.tool "code"           # Visual merge tool
+git config --global diff.tool "code"            # Visual diff tool
+```
+
+---
+
+## Appendix C: Advanced Scenarios
+
+### Scenario A: Multiple Remotes
+```bash
+# Add additional remote (e.g., fork)
+git remote add upstream <original-repo-url>
+git remote add fork <your-fork-url>
+
+# Sync with upstream
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
+```
+
+### Scenario B: Collaborative Workflow
+```bash
+# Feature branch workflow
+git checkout main
+git pull origin main
+git checkout -b feature/new-feature
+# ... work on feature ...
+git push -u origin feature/new-feature
+# Create pull request
+# After approval:
+git checkout main
+git pull origin main
+git branch -d feature/new-feature
+```
+
+### Scenario C: Hotfix Workflow
+```bash
+# Emergency fix
+git checkout main
+git checkout -b hotfix/critical-fix
+# ... make fix ...
+git commit -am "Fix critical bug"
+git push -u origin hotfix/critical-fix
+
+# Apply to other branches
+git checkout develop
+git cherry-pick hotfix/critical-fix
+```
+
+### Scenario D: Release Management
+```bash
+# Create release branch
+git checkout develop
+git checkout -b release/v1.2.0
+# ... final testing and bug fixes ...
+git checkout main
+git merge --no-ff release/v1.2.0
+git tag -a v1.2.0 -m "Version 1.2.0"
+git push origin main --tags
+
+# Merge back to develop
+git checkout develop
+git merge --no-ff release/v1.2.0
+```
+
+---
+
+## Appendix D: Configuration and Customization
+
+### Global Configuration
+```bash
+# User identity
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Editor and tools
+git config --global core.editor "code --wait"
+git config --global merge.tool vimdiff
+git config --global diff.tool vimdiff
+
+# Aliases
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.cm commit
+git config --global alias.lg "log --oneline --graph --decorate --all"
+```
+
+### Repository-specific Configuration
+```bash
+# Set different email for work repository
+git config user.email "work.email@company.com"
+
+# Set different push behavior
+git config push.default simple
+```
+
+### Useful Aliases
+```bash
+git config --global alias.unstage "reset HEAD --"
+git config --global alias.last "log -1 HEAD"
+git config --global alias.visual "!gitk"
+git config --global alias.history "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+---
+
+## Appendix E: BFG Repo-Cleaner Guide
+
+### Installation
+```bash
+# macOS
+brew install bfg
+
+# Manual download
+wget https://rtyley.github.io/bfg-repo-cleaner/releases/download/v1.14.0/bfg-1.14.0.jar
+```
+
+### Common Use Cases
+
+#### Remove Large Files
+```bash
+# Remove files larger than 100MB from history
+bfg --strip-blobs-bigger-than 100M .git
+
+# Remove specific large files
+bfg --delete-files large-file.zip .git
+```
+
+#### Remove Sensitive Data
+```bash
+# Remove passwords from history
+bfg --replace-text passwords.txt .git
+
+# Delete files with secrets
+bfg --delete-files id_rsa .git
+bfg --delete-files "*.key" .git
+```
+
+#### Complete Cleanup Process
+```bash
+# 1. Clone fresh copy
+git clone --mirror <repo-url>
+
+# 2. Run BFG
+bfg --strip-blobs-bigger-than 50M repo.git
+
+# 3. Cleanup
+cd repo.git
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
+
+# 4. Push cleaned history
+git push
 ```
 
-**Lesson**: BFG removes sensitive/large files from entire Git history.
-
 ---
 
-## Slide 11: The Learning Progression 📈
+## Appendix F: Git Internals (For the Very Curious)
 
-**Level 1: Daily Survival**
-- `clone`, `add`, `commit`, `push`, `pull`, `status`
-- Basic branching: `branch`, `checkout`, `merge`
-
-**Level 2: Mistake Recovery** *(Learn when needed)*
-- `reset`, `revert`, `checkout -- file`
-- Merge conflict resolution
-
-**Level 3: Professional Polish** *(Learn for code reviews)*
-- `rebase -i`, `cherry-pick`
-- `push --force-with-lease`
-
-**Level 4: Crisis Management** *(Learn when disasters strike)*
-- BFG for sensitive data removal
-- `reflog` for advanced recovery
-- `bisect` for bug hunting
-
-**Lesson**: Progressive learning based on real needs, not arbitrary timelines.
-
----
-
-## Slide 12: Real-World Scenarios 🌍
-
-**Scenario 1**: New feature development
+### Repository Structure
 ```bash
-git checkout -b feature/new-feature
-# develop, commit, push
-git push --force-with-lease  # after rebasing for clean history
+.git/
+├── HEAD                    # Current branch reference
+├── config                  # Repository configuration
+├── description             # Repository description
+├── hooks/                  # Git hooks
+├── info/                   # Additional info
+├── objects/                # Git object database
+│   ├── info/
+│   └── pack/
+└── refs/                   # References
+    ├── heads/              # Branch references
+    ├── remotes/            # Remote references
+    └── tags/               # Tag references
 ```
 
-**Scenario 2**: Emergency production fix
+### Object Types
 ```bash
-git checkout -b hotfix/critical-security-fix
-# fix, commit
-git cherry-pick <commit-hash>  # apply to multiple branches
+# Blob - File contents
+git cat-file -p <hash>
+
+# Tree - Directory structure  
+git ls-tree <hash>
+
+# Commit - Commit object
+git show <hash>
+
+# Tag - Tagged object
+git show <tag>
 ```
 
-**Scenario 3**: Accidentally committed secrets
+### Low-level Commands
 ```bash
-bfg --replace-text passwords.txt  # remove from all history
-git push --force-with-lease
+git hash-object -w <file>         # Create blob object
+git update-index --add <file>     # Add to index
+git write-tree                    # Write tree object
+git commit-tree <tree> -m "msg"   # Create commit object
 ```
-
-**Scenario 4**: Messy development branch
-```bash
-git rebase -i HEAD~10  # clean up commits before review
-```
-
-**Lesson**: Each advanced feature solves specific real-world problems.
 
 ---
 
-## Slide 13: The Mentor's Wisdom 🎓
-
-**From our debate synthesis**: Context-driven learning wins!
-
-**The Git Teaching Philosophy**:
-1. **Start with daily workflows** - clone, add, commit, push
-2. **Introduce safety tools when mistakes happen** - reset, revert
-3. **Add professional tools for code review** - rebase, force-with-lease  
-4. **Teach crisis management when needed** - BFG, advanced recovery
-
-**Anti-Patterns to Avoid**:
-- ❌ Teaching all features at once (cognitive overload)
-- ❌ Teaching only basics (unprepared for real work)
-- ❌ Learning features without context (no retention)
-
-**Pro-Pattern to Follow**:
-- ✅ Progressive disclosure based on real scenarios
-- ✅ Hands-on practice with each new tool
-- ✅ Understanding WHY before HOW
-
-**Lesson**: The best Git education follows natural problem-solving progression.
-
----
-
-## Slide 14: Your Git Journey Starts Here 🚀
-
-**Immediate Actions**:
-1. Practice the basics with our demo repo
-2. Create your first feature branch
-3. Make a mistake and fix it with `reset`
-4. Try cherry-picking a commit
-
-**Next Week**: 
-- Interactive rebase your messy commits
-- Use force-with-lease safely
-
-**Next Month**:
-- Learn BFG when you inevitably commit something you shouldn't
-
-**Remember**: Git mastery comes from solving real problems, not memorizing commands.
-
----
-
-## Slide 15: Resources & Commands Summary 📚
-
-**Essential Commands Cheat Sheet**:
-```bash
-# Daily Workflow
-git clone <url>              # Get repository
-git checkout -b feature-name # Create & switch branch
-git add .                    # Stage changes  
-git commit -m "message"      # Save with description
-git push --set-upstream origin feature-name  # First push
-
-# Safety & Recovery
-git status                   # Check current state
-git reset --soft HEAD~1      # Undo last commit, keep changes
-git push --force-with-lease  # Safe force push
-
-# Professional Polish  
-git rebase -i HEAD~3         # Clean up last 3 commits
-git cherry-pick <hash>       # Apply specific commit
-
-# Crisis Management
-bfg --strip-blobs-bigger-than 50M  # Remove large files
-```
-
-**The Demo Repository**: `/tmp/git-demo-repo`
-- Explore the branches: `git branch -a`
-- See the history: `git log --oneline --all --graph`
-- Practice on real scenarios!
-
----
-
-**Thank You! Questions? 🤝**
-
-*Remember: Great developers aren't born knowing Git. They learn it by solving real problems, one command at a time.*
+This completes the comprehensive Git learning system. Use the main presentation for overview and scenarios, then dive into these appendices for detailed technical knowledge!
