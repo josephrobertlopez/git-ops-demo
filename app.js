@@ -8,6 +8,8 @@ function startApp() {
 function validateUser() {
     // Basic validation
     console.log("Validating user...");
+    // TODO: add real validation logic
+    return true;
 }
 
 startApp();
