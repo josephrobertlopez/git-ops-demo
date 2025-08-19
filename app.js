@@ -1,8 +1,13 @@
 // Simple web application
 function startApp() {
     console.log("Starting application...");
-    // TODO: Add user validation
-    validateUser();
+    
+    if (!validateUser()) {
+        console.log("Validation failed!");
+        return;
+    }
+    
+    console.log("User validated successfully!");
 }
 
 function validateUser() {
