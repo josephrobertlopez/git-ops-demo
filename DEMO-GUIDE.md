@@ -74,15 +74,15 @@ git log --oneline --graph --all
 
 **What This Reveals**:
 ```
-* 6638e8b docs: Feature Git Productivity Masterclass as primary learning path
-* 4fbe5c9 docs: Restructure into optimal 3-document learning system  
-* 7b2ea1f docs: Transform demo guide into narrative-driven learning companion
-* 577b64a docs: Add comprehensive demo guide with all scenarios
+* 8acce5c refactor: Rename main presentation file to git-presentation.md
+* 6c31fa0 refactor: Streamline to single presentation and remove redundant files
+* 5d867c2 docs: Integrate MANIFEST.md content into README for streamlined navigation
+* 1f29470 docs: Update README to feature streamlined Git Mastery system
 * 7440a5a Add comprehensive Git essentials presentation
 * 69cf4b6 Initial commit: Basic app structure
 ```
 
-**Sarah's Realization**: "This isn't a typical startup project - it's a Git learning system! No wonder there are so many documentation commits."
+**Sarah's Realization**: "This isn't a typical startup project - it's a Git learning system! The recent commits show how the documentation evolved into a streamlined presentation format."
 
 ### Phase 3: Deep Diving into Specific Changes
 
@@ -95,12 +95,12 @@ git show 69cf4b6  # The initial commit
 
 ```bash
 # Sarah checks what changed in the latest update:
-git show 6638e8b --stat
+git show 8acce5c --stat
 ```
 
 **Files Changed**:
-- `README.md` - Major overhaul highlighting productivity masterclass
-- New focus on immediate results rather than academic learning
+- `README.md` - Updated references to git-presentation.md
+- `git-mastery-unified.md` renamed to `git-presentation.md` for simplicity
 
 ### Phase 4: Understanding Current State
 
@@ -529,7 +529,7 @@ WARNING: Experimental features
 - Large test dataset included (accidentally)
 
 This commit demonstrates common mistakes:
-- Large binary/data files in git (large-dataset.json - 28KB+!)
+- Large binary/data files in git (large-dataset.json - 74KB+!)
 - Experimental code on wrong branch
 - Mixed concerns in single commit
 ```
@@ -654,7 +654,7 @@ git push --force-with-lease origin demo/messy-development
 **Challenge**: "Remove Casey's accidental large file from ALL history!"
 ```bash
 git checkout experimental/new-api
-ls -lah large-dataset.json          # See Casey's 28KB mistake
+ls -lah large-dataset.json          # See Casey's 74KB mistake
 # Use BFG to erase it from existence
 bfg --delete-files large-dataset.json .git
 ```

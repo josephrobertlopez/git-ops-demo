@@ -127,7 +127,7 @@ cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
 | `hotfix/security-patch` | **Emergency Fixes** | `cdf2a97` SECURITY: Remove hardcoded credentials | **Cherry-pick practice** |
 | `demo/messy-development` | **History Cleanup** | `001ec0d` WIP: starting validation<br>`2dc34d1` oops forgot return<br>`b71419f` actually implement properly<br>`0c3ee51` fix startup flow<br>`fdf9608` add basic tests | **Interactive rebase practice** |
 | `feature/user-validation-clean` | **Professional PR** | `0926b81` feat: Add comprehensive validation | Professional standards |
-| `experimental/new-api` | **Large File Disaster** | `ce6d317` Add experimental GraphQL API<br>⚠️ Contains `large-dataset.json` (28KB+) | **BFG cleanup practice** |
+| `experimental/new-api` | **Large File Disaster** | `ce6d317` Add experimental GraphQL API<br>⚠️ Contains `large-dataset.json` (74KB+) | **BFG cleanup practice** |
 
 ### Quick Workshop Commands
 
@@ -148,7 +148,7 @@ git rebase -i HEAD~5               # Clean up 5 messy commits
 
 # Practice BFG cleanup (Casey's disaster)
 git checkout experimental/new-api
-ls -lah large-dataset.json         # See the 28KB mistake
+ls -lah large-dataset.json         # See the 74KB mistake
 bfg --delete-files large-dataset.json .git
 ```
 
@@ -157,7 +157,7 @@ bfg --delete-files large-dataset.json .git
 **All Branches**: `README.md`, presentation files  
 **Main**: `app.js`, `config.js` (⚠️ has secrets), `.gitignore`  
 **UI Branch**: + `styles.css`, `index.html`  
-**API Branch**: + `api.js`, `large-dataset.json` (⚠️ 28KB problem)  
+**API Branch**: + `api.js`, `large-dataset.json` (⚠️ 74KB problem)  
 **Messy Branch**: + `tests.js` (across 5 commits)  
 **Clean Branch**: + `validation.test.js` (professional quality)
 
