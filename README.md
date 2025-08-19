@@ -16,7 +16,7 @@
 
 | Document | Purpose | Best For |
 |----------|---------|----------|
-| 🎯 [**git-mastery-unified.md**](git-mastery-unified.md) | **Main presentation with commands + situations** | **Presentations, quick decisions, overview** |
+| 🎯 [**git-presentation.md**](git-presentation.md) | **Main presentation with commands + situations** | **Presentations, quick decisions, overview** |
 | 📚 [**DEMO-GUIDE.md**](DEMO-GUIDE.md) | **Deep scenario walkthroughs** | **Immersive practice, complete context** |
 
 ## 🚀 Quick Start
@@ -25,7 +25,7 @@
 ```bash
 git clone https://github.com/josephrobertlopez/git-ops-demo.git
 cd git-ops-demo
-cat git-mastery-unified.md  # Main presentation with all scenarios!
+cat git-presentation.md  # Main presentation with all scenarios!
 ```
 
 ### Want Deep Hands-On Practice?
@@ -163,4 +163,4 @@ bfg --delete-files large-dataset.json .git
 
 ---
 
-**Start your Git learning adventure**: Read the [main presentation](git-mastery-unified.md), then practice on the [character stories](DEMO-GUIDE.md)! 🎉
+**Start your Git learning adventure**: Read the [main presentation](git-presentation.md), then practice on the [character stories](DEMO-GUIDE.md)! 🎉
