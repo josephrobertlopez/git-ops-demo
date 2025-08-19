@@ -6,10 +6,21 @@ function startApp() {
 }
 
 function validateUser() {
-    // Basic validation
+    // Enhanced validation with multiple checks
     console.log("Validating user...");
-    // TODO: add real validation logic
-    return true;
+    
+    const userInput = getUserInput();
+    if (!userInput) return false;
+    
+    return validateInput(userInput);
+}
+
+function getUserInput() {
+    return prompt("Enter username:");
+}
+
+function validateInput(input) {
+    return input && input.length > 3;
 }
 
 startApp();
