@@ -16,10 +16,8 @@
 
 | Document | Purpose | Best For |
 |----------|---------|----------|
-| 🎯 [**git-mastery-unified.md**](git-mastery-unified.md) | **Streamlined commands + situations** | **Presentations, quick decisions, overview** |
+| 🎯 [**git-mastery-unified.md**](git-mastery-unified.md) | **Main presentation with commands + situations** | **Presentations, quick decisions, overview** |
 | 📚 [**DEMO-GUIDE.md**](DEMO-GUIDE.md) | **Deep scenario walkthroughs** | **Immersive practice, complete context** |
-| ⚡ [**git-productivity-masterclass.md**](git-productivity-masterclass.md) | Immediate productivity gains | Instant results, copy-paste templates |
-| 📖 [**git-essentials-presentation.md**](git-essentials-presentation.md) | Academic-style with appendices | Complete reference, detailed learning |
 
 ## 🚀 Quick Start
 
@@ -27,19 +25,19 @@
 ```bash
 git clone https://github.com/josephrobertlopez/git-ops-demo.git
 cd git-ops-demo
-cat git-mastery-unified.md  # Perfect presentation format!
+cat git-mastery-unified.md  # Main presentation with all scenarios!
 ```
 
 ### Want Deep Hands-On Practice?
 ```bash
-# After reading unified guide, dive deep:
+# After reading main presentation, dive deep:
 cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
 # Then practice on the actual branches mentioned
 ```
 
 ### Emergency Git Situations?
 ```bash
-# Quick decision tree in unified guide:
+# Quick decision tree in main presentation:
 # "Production broken?" → git cherry-pick
 # "History embarrassing?" → git rebase -i  
 # "Need safe push?" → git push --force-with-lease
@@ -47,7 +45,7 @@ cat DEMO-GUIDE.md  # Complete character stories with walkthroughs
 
 ### Teaching Git to Others?
 ```bash
-# Unified guide = perfect presentation slides
+# Main presentation = perfect presentation slides
 # Demo guide = hands-on workshop material  
 # Branch inventory below = instructor reference
 ```
@@ -165,4 +163,4 @@ bfg --delete-files large-dataset.json .git
 
 ---
 
-**Start your Git learning adventure**: Read the [unified guide](git-mastery-unified.md), then practice on the [character stories](DEMO-GUIDE.md)! 🎉
+**Start your Git learning adventure**: Read the [main presentation](git-mastery-unified.md), then practice on the [character stories](DEMO-GUIDE.md)! 🎉
